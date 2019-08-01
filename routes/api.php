@@ -16,3 +16,9 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('hotels', 'HotelController@getHotels');
+Route::get('hotel/{id}', 'HotelController@getHotelById');
+Route::post('hotel', 'HotelController@hotelSave');
+Route::put('hotel/{id}', 'HotelController@hotelUpdate');
+Route::delete('hotel/{id}', 'HotelController@hotelDelete');
